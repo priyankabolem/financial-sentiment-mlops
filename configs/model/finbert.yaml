@@ -1,0 +1,42 @@
+# FinBERT Model Configuration
+name: finbert
+type: transformer
+base_model: "ProsusAI/finbert"
+
+# Model Architecture
+architecture:
+  num_labels: 3  # positive, negative, neutral
+  dropout: 0.1
+  hidden_dropout_prob: 0.1
+  attention_probs_dropout_prob: 0.1
+
+# Tokenizer Settings
+tokenizer:
+  max_length: 512
+  padding: "max_length"
+  truncation: true
+  return_attention_mask: true
+  return_token_type_ids: false
+
+# Model Loading
+pretrained:
+  use_pretrained: true
+  model_name_or_path: "ProsusAI/finbert"
+  cache_dir: "./cache"
+
+# Fine-tuning Configuration
+fine_tuning:
+  unfreeze_layers: 2  # Number of transformer layers to unfreeze
+  freeze_embeddings: false
+
+# Label Mapping
+labels:
+  0: "negative"
+  1: "neutral"
+  2: "positive"
+
+# Inference Settings
+inference:
+  batch_size: 32
+  num_workers: 2
+  device: "cuda"  # or "cpu"

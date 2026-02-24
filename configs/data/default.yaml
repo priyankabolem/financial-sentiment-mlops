@@ -1,0 +1,62 @@
+# Data Configuration
+sources:
+  - news_api
+  - alpha_vantage
+  - twitter
+  - reddit
+
+# News API Configuration
+news_api:
+  enabled: true
+  sources: "financial-times,bloomberg,reuters,wall-street-journal"
+  keywords: "stocks,trading,market,earnings,economy,fed,cryptocurrency"
+  language: "en"
+  page_size: 100
+  lookback_days: 7
+
+# Alpha Vantage Configuration
+alpha_vantage:
+  enabled: true
+  function: NEWS_SENTIMENT
+  tickers: "AAPL,MSFT,GOOGL,AMZN,TSLA,META,NVDA"
+  topics: "earnings,ipo,merger,financial_markets"
+  time_from: "20240101T0000"
+
+# Twitter Configuration
+twitter:
+  enabled: false  # Set to true if you have Twitter API access
+  keywords: ["$SPY", "$QQQ", "$AAPL", "stock market", "trading"]
+  max_tweets: 1000
+  language: "en"
+
+# Reddit Configuration
+reddit:
+  enabled: true
+  subreddits: ["wallstreetbets", "stocks", "investing", "StockMarket"]
+  limit: 100
+  time_filter: "week"
+
+# Data Processing
+processing:
+  min_text_length: 10
+  max_text_length: 512
+  remove_duplicates: true
+  filter_non_english: true
+
+# Data Validation
+validation:
+  required_fields: ["text", "source", "timestamp"]
+  text_quality:
+    min_words: 3
+    max_special_chars_ratio: 0.3
+
+# Data Splits
+splits:
+  train: 0.7
+  validation: 0.15
+  test: 0.15
+  stratify: true
+
+# Batch Processing
+batch_size: 1000
+num_workers: 4

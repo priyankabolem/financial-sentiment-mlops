@@ -1,0 +1,50 @@
+# Main Configuration File
+defaults:
+  - data: default
+  - model: finbert
+  - training: default
+  - deployment: default
+  - _self_
+
+# Project Settings
+project:
+  name: financial_sentiment_mlops
+  version: "0.1.0"
+  description: "Enterprise-Grade Financial Sentiment Analysis"
+
+# Paths
+paths:
+  data_dir: data
+  raw_data: data/raw
+  processed_data: data/processed
+  features_data: data/features
+  models_dir: models
+  logs_dir: logs
+  artifacts_dir: artifacts
+
+# MLflow Configuration
+mlflow:
+  tracking_uri: ${oc.env:MLFLOW_TRACKING_URI,http://localhost:5000}
+  experiment_name: financial_sentiment
+  artifact_location: ./mlruns
+  run_name: ${now:%Y-%m-%d_%H-%M-%S}
+
+# Logging
+logging:
+  level: INFO
+  format: "<green>{time:YYYY-MM-DD HH:mm:ss}</green> | <level>{level: <8}</level> | <cyan>{name}</cyan>:<cyan>{function}</cyan>:<cyan>{line}</cyan> - <level>{message}</level>"
+  rotation: "100 MB"
+  retention: "30 days"
+
+# Monitoring
+monitoring:
+  enable_prometheus: true
+  prometheus_port: 9090
+  enable_data_drift: true
+  drift_check_interval: 3600  # seconds
+  performance_threshold:
+    latency_p99: 100  # ms
+    throughput_min: 100  # requests/sec
+
+# Random Seed
+seed: 42

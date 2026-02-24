@@ -1,0 +1,71 @@
+# Training Configuration
+
+# Optimization
+optimizer:
+  name: adamw
+  lr: 2.0e-5
+  weight_decay: 0.01
+  betas: [0.9, 0.999]
+  eps: 1.0e-8
+
+# Learning Rate Schedule
+scheduler:
+  name: linear_warmup
+  num_warmup_steps: 500
+  num_training_steps: 10000
+
+# Training Parameters
+batch_size: 16
+num_epochs: 5
+gradient_accumulation_steps: 2
+max_grad_norm: 1.0
+fp16: true  # Mixed precision training
+dataloader_num_workers: 4
+
+# Early Stopping
+early_stopping:
+  enabled: true
+  patience: 3
+  metric: "val_f1"
+  mode: "max"
+
+# Checkpointing
+checkpointing:
+  save_total_limit: 3
+  save_steps: 500
+  eval_steps: 500
+  logging_steps: 100
+  load_best_model_at_end: true
+
+# Metrics to Track
+metrics:
+  - accuracy
+  - f1_score
+  - precision
+  - recall
+  - roc_auc
+
+# Class Weights (for imbalanced data)
+class_weights:
+  enabled: false
+  auto_compute: true
+  weights: null  # Will be computed if auto_compute is true
+
+# Data Augmentation
+augmentation:
+  enabled: false
+  techniques:
+    - synonym_replacement
+    - back_translation
+  augmentation_ratio: 0.1
+
+# Hyperparameter Optimization
+hpo:
+  enabled: false
+  framework: optuna
+  n_trials: 20
+  search_space:
+    lr: [1.0e-5, 5.0e-5]
+    batch_size: [8, 16, 32]
+    num_epochs: [3, 5, 7]
+    weight_decay: [0.0, 0.01, 0.1]

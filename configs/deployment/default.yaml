@@ -1,0 +1,71 @@
+# Deployment Configuration
+
+# API Settings
+api:
+  host: ${oc.env:API_HOST,0.0.0.0}
+  port: ${oc.env:API_PORT,8000}
+  workers: ${oc.env:WORKERS,4}
+  reload: false
+  log_level: info
+  timeout_keep_alive: 5
+
+# Model Serving
+serving:
+  model_name: financial_sentiment_model
+  model_version: "production"
+  model_stage: "Production"
+  batch_size: 32
+  max_batch_delay: 0.1  # seconds
+  enable_batching: true
+
+# Performance
+performance:
+  max_concurrent_requests: 100
+  request_timeout: 30  # seconds
+  enable_caching: true
+  cache_ttl: 3600  # seconds
+  cache_size: 1000  # number of items
+
+# Rate Limiting
+rate_limiting:
+  enabled: true
+  requests_per_minute: 100
+  burst_size: 20
+
+# Health Checks
+health_check:
+  enabled: true
+  endpoint: "/health"
+  interval: 30  # seconds
+
+# Monitoring Endpoints
+monitoring:
+  metrics_endpoint: "/metrics"
+  enable_request_logging: true
+  enable_performance_tracking: true
+
+# Model Loading
+model_loading:
+  lazy_loading: false
+  warmup_requests: 10
+  device: "cuda"  # or "cpu"
+
+# Response Format
+response:
+  include_probabilities: true
+  include_confidence: true
+  include_model_version: true
+  round_decimals: 4
+
+# CORS Settings
+cors:
+  enabled: true
+  allow_origins: ["*"]
+  allow_methods: ["*"]
+  allow_headers: ["*"]
+
+# Security
+security:
+  enable_api_key: false
+  api_key_header: "X-API-Key"
+  enable_https: false
