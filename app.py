@@ -1,6 +1,6 @@
 """
-Streamlit Demo App for Financial Sentiment Analysis
-Deployed on Hugging Face Spaces for portfolio showcase
+Financial Sentiment Analysis - Interactive Demo
+Real-time sentiment prediction using FinBERT transformer model
 """
 
 import streamlit as st
@@ -369,10 +369,9 @@ def main():
     st.markdown(
         """
         <div style='text-align: center; color: gray; padding: 20px;'>
-            <p>Built with ❤️ using Streamlit, PyTorch, and Transformers</p>
-            <p>Part of an Enterprise MLOps Portfolio Project</p>
-            <p><strong>Priyanka Bolem</strong> |
-            <a href='https://github.com/priyankabolem/financial-sentiment-mlops'>GitHub</a> |
+            <p>Financial Sentiment Analysis Platform</p>
+            <p><strong>Priyanka Bolem</strong> | ML Engineer</p>
+            <p><a href='https://github.com/priyankabolem/financial-sentiment-mlops'>GitHub</a> |
             <a href='https://linkedin.com/in/priyankabolem'>LinkedIn</a></p>
         </div>
         """,

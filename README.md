@@ -1,24 +1,11 @@
-# Financial Sentiment MLOps - Enterprise-Grade End-to-End ML Lifecycle System
+# Financial Sentiment MLOps Platform
 
-[![🤗 Live Demo](https://img.shields.io/badge/🤗-Live%20Demo-yellow)](https://huggingface.co/spaces/priyankabolem/financial-sentiment-analysis)
-[![CI/CD Pipeline](https://github.com/priyankabolem/financial-sentiment-mlops/workflows/CI/CD%20Pipeline/badge.svg)](https://github.com/priyankabolem/financial-sentiment-mlops/actions)
+[![Live Demo](https://img.shields.io/badge/Demo-Live-success)](https://priyankabolem-financial-sentiment-analysis.hf.space)
+[![CI/CD](https://github.com/priyankabolem/financial-sentiment-mlops/workflows/CI/CD%20Pipeline/badge.svg)](https://github.com/priyankabolem/financial-sentiment-mlops/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 
-A comprehensive, production-grade Machine Learning system that covers the complete ML lifecycle from business problem definition to continuous monitoring and automated retraining. This project demonstrates advanced ML Engineering and MLOps capabilities suitable for industry-level deployment.
-
-## 🎮 Try the Live Demo
-
-**[👉 Click here to try the live demo on Hugging Face Spaces](https://huggingface.co/spaces/priyankabolem/financial-sentiment-analysis)**
-
-Experience real-time financial sentiment analysis with:
-- ✨ Interactive web interface
-- 📊 Live predictions with confidence scores
-- 📈 Visual sentiment distributions
-- 💡 Pre-loaded examples (news, social media, earnings)
-- 🚀 Instant results powered by FinBERT
-
-> **Note:** The demo showcases the ML model in action. For the full production MLOps infrastructure (Docker, Kubernetes, monitoring, CI/CD), see the sections below.
+Production-grade ML system for real-time financial sentiment analysis with complete MLOps infrastructure covering the entire ML lifecycle from data ingestion to deployment and monitoring.
 
 ## 🎯 Project Objective
 
@@ -454,17 +441,13 @@ financial-sentiment-mlops/
 └── README.md                  # This file
 ```
 
-## 🎓 Learning Outcomes
+## 📫 Contact
 
-This project demonstrates:
-
-1. **MLOps Best Practices**: End-to-end ML lifecycle management
-2. **System Design**: Scalable, maintainable architecture
-3. **Production Deployment**: Real-world deployment strategies
-4. **Monitoring**: Data drift, model performance, system health
-5. **DevOps**: CI/CD, containerization, orchestration
-6. **Software Engineering**: Testing, documentation, code quality
+For questions or collaboration opportunities:
+- **GitHub**: [@priyankabolem](https://github.com/priyankabolem)
+- **LinkedIn**: [Priyanka Bolem](https://linkedin.com/in/priyankabolem)
+- **Email**: Contact via LinkedIn
 
 ---
 
-**⭐ If you find this project helpful, please consider giving it a star!**
+**Built with expertise in ML Engineering, MLOps, and Production System Design**
