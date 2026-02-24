@@ -1,11 +1,19 @@
 # Financial Sentiment MLOps Platform
 
-[![Live Demo](https://img.shields.io/badge/Demo-Live-success)](https://priyankabolem-financial-sentiment-analysis.hf.space)
+[![Live Demo](https://img.shields.io/badge/🚀-Try%20Live%20Demo-blue)](https://huggingface.co/spaces/Priyabolem/financial-sentiment-analysis)
 [![CI/CD](https://github.com/priyankabolem/financial-sentiment-mlops/workflows/CI/CD%20Pipeline/badge.svg)](https://github.com/priyankabolem/financial-sentiment-mlops/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 
 Production-grade ML system for real-time financial sentiment analysis with complete MLOps infrastructure covering the entire ML lifecycle from data ingestion to deployment and monitoring.
+
+## 🎮 Live Demo
+
+**[👉 Try the Interactive Demo Here](https://huggingface.co/spaces/Priyabolem/financial-sentiment-analysis)**
+
+Test the model with your own financial text and see real-time sentiment predictions with confidence scores.
+
+---
 
 ## 🎯 Project Objective
 
@@ -154,11 +162,13 @@ docker-compose ps
 docker-compose logs -f api
 ```
 
-Access the services:
+Access the services (when running locally on your computer):
 - **API Documentation**: http://localhost:8000/docs
 - **MLflow UI**: http://localhost:5000
 - **Prometheus**: http://localhost:9090
 - **Grafana**: http://localhost:3000 (admin/admin)
+
+> **Note:** These localhost URLs only work when you run the project on your own machine. To see the live demo without installation, visit: https://huggingface.co/spaces/Priyabolem/financial-sentiment-analysis
 
 ### Running the ML Pipeline
 
@@ -268,18 +278,20 @@ open htmlcov/index.html
 
 ## 📊 Monitoring
 
+The system includes production-grade monitoring infrastructure:
+
 ### Prometheus Metrics
 
-Access Prometheus at http://localhost:9090
+When running locally, access Prometheus at http://localhost:9090
 
-Key metrics:
+Key metrics tracked:
 - `sentiment_request_total` - Total API requests
 - `sentiment_request_latency_seconds` - Request latency
 - `sentiment_prediction_total` - Predictions by sentiment class
 
 ### Grafana Dashboards
 
-Access Grafana at http://localhost:3000 (admin/admin)
+When running locally, access Grafana at http://localhost:3000 (admin/admin)
 
 Pre-configured dashboards:
 - API Performance
