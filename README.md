@@ -1,10 +1,24 @@
 # Financial Sentiment MLOps - Enterprise-Grade End-to-End ML Lifecycle System
 
+[![🤗 Live Demo](https://img.shields.io/badge/🤗-Live%20Demo-yellow)](https://huggingface.co/spaces/priyankabolem/financial-sentiment-analysis)
 [![CI/CD Pipeline](https://github.com/priyankabolem/financial-sentiment-mlops/workflows/CI/CD%20Pipeline/badge.svg)](https://github.com/priyankabolem/financial-sentiment-mlops/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 
 A comprehensive, production-grade Machine Learning system that covers the complete ML lifecycle from business problem definition to continuous monitoring and automated retraining. This project demonstrates advanced ML Engineering and MLOps capabilities suitable for industry-level deployment.
+
+## 🎮 Try the Live Demo
+
+**[👉 Click here to try the live demo on Hugging Face Spaces](https://huggingface.co/spaces/priyankabolem/financial-sentiment-analysis)**
+
+Experience real-time financial sentiment analysis with:
+- ✨ Interactive web interface
+- 📊 Live predictions with confidence scores
+- 📈 Visual sentiment distributions
+- 💡 Pre-loaded examples (news, social media, earnings)
+- 🚀 Instant results powered by FinBERT
+
+> **Note:** The demo showcases the ML model in action. For the full production MLOps infrastructure (Docker, Kubernetes, monitoring, CI/CD), see the sections below.
 
 ## 🎯 Project Objective
 
