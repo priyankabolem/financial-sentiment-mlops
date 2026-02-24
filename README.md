@@ -57,6 +57,35 @@ Build a financial sentiment intelligence platform that:
 └─────────────────────────────────────────────────────────────────┘
 ```
 
+## 💡 Technical Highlights
+
+### Model Architecture
+- **Base Model**: FinBERT (Financial domain pre-trained BERT)
+- **Fine-tuning Strategy**: Task-specific head with configurable dropout layers
+- **Optimization**: AdamW optimizer with linear warmup schedule
+- **Training**: Mixed precision (FP16) for faster training and reduced memory
+
+### Data Pipeline
+- **Async Data Ingestion**: Parallel fetching from multiple sources
+- **Text Preprocessing**: Financial domain-specific tokenization and normalization
+- **Feature Engineering**: 30+ engineered features including sentiment lexicon scores, financial term frequency, temporal patterns
+- **Data Versioning**: DVC integration for reproducible data pipelines
+
+### MLOps Infrastructure
+- **Experiment Tracking**: MLflow for hyperparameter logging, metric tracking, and model versioning
+- **Containerization**: Multi-stage Docker builds for optimized image sizes
+- **Orchestration**: Kubernetes deployment with horizontal pod autoscaling (HPA)
+- **Monitoring**: Prometheus metrics + Grafana dashboards for real-time performance tracking
+- **Drift Detection**: Evidently for statistical drift detection on production data
+
+### Performance Optimization
+- **Batch Inference**: Dynamic batching for improved throughput
+- **Model Caching**: LRU cache for frequently requested predictions
+- **API Rate Limiting**: Token bucket algorithm for request throttling
+- **Latency**: Sub-100ms p99 latency for single predictions
+
+---
+
 ## 🚀 Key Features
 
 ### 1. **Problem Framing & Metrics**
@@ -206,7 +235,20 @@ This will:
 - Track experiments in MLflow
 - Save best model to `models/best_model/`
 
-#### Step 4: Model Deployment
+#### Step 4: Model Evaluation
+
+```bash
+python scripts/evaluate.py
+```
+
+This will:
+- Load trained model
+- Run comprehensive evaluation
+- Generate metrics (precision, recall, F1, ROC-AUC)
+- Create confusion matrix and performance plots
+- Save detailed evaluation report
+
+#### Step 5: Model Deployment
 
 ```bash
 # Local development
@@ -426,9 +468,10 @@ financial-sentiment-mlops/
 │   ├── integration/           # Integration tests
 │   └── performance/           # Performance tests
 ├── scripts/                   # Executable scripts
-│   ├── ingest_data.py
-│   ├── preprocess_data.py
-│   └── train.py
+│   ├── ingest_data.py         # Data collection pipeline
+│   ├── preprocess_data.py     # Data preprocessing pipeline
+│   ├── train.py               # Model training pipeline
+│   └── evaluate.py            # Model evaluation pipeline
 ├── infrastructure/            # Infrastructure as Code
 │   ├── docker/                # Dockerfiles
 │   ├── kubernetes/            # K8s manifests
